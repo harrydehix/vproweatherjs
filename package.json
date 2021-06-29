@@ -1,0 +1,31 @@
+{
+    "name": "vproweatherjs",
+    "version": "0.0.1",
+    "description": "javascript interface to the vproweather driver",
+    "main": "index.js",
+    "scripts": {
+        "watch": "npx tsc --watch",
+        "start": "cd ./dist && node"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/harrydehix/vproweatherjs.git"
+    },
+    "keywords": [
+        "vproweather"
+    ],
+    "author": "Henri Hollmann",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/harrydehix/vproweatherjs/issues"
+    },
+    "homepage": "https://github.com/harrydehix/vproweatherjs#readme",
+    "dependencies": {
+        "await-exec": "^0.1.2"
+    },
+    "devDependencies": {
+        "@types/node": "^15.12.5",
+        "ts-node": "^10.0.0",
+        "typescript": "^4.3.4"
+    }
+}
