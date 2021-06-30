@@ -1,18 +1,24 @@
 {
     "name": "vproweatherjs",
     "version": "0.0.1",
-    "description": "javascript interface to the vproweather driver",
-    "main": "index.js",
+    "description": "javascript/typescript interface to the vproweather driver",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "watch": "npx tsc --watch",
-        "start": "cd ./dist && node"
+        "start": "cd ./dist && node",
+        "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/harrydehix/vproweatherjs.git"
     },
     "keywords": [
-        "vproweather"
+        "vproweather",
+        "Vantage Pro 2",
+        "Vantage",
+        "weather",
+        "weather station"
     ],
     "author": "Henri Hollmann",
     "license": "ISC",
@@ -25,6 +31,9 @@
     },
     "devDependencies": {
         "@types/node": "^15.12.5",
+        "@typescript-eslint/eslint-plugin": "^4.28.1",
+        "@typescript-eslint/parser": "^4.28.1",
+        "eslint": "^7.29.0",
         "ts-node": "^10.0.0",
         "typescript": "^4.3.4"
     }
