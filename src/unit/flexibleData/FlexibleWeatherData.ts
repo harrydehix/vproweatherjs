@@ -7,14 +7,14 @@ import UnitError from "../UnitError";
  * Nestable arrayish object structure holding any weather data and its associated units.
  */
 export type MixedStaticWeatherData = {
-    [unitProperty: string]: [number, Units.AnyUnit] | string | Date | boolean | null | MixedStaticWeatherData,
+    [unitProperty: string]: [number, Units.AnyUnit] | undefined | string | Date | boolean | null | MixedStaticWeatherData,
 }
 
 /**
  * Nestable object structure holding plain weather data without its units.
  */
 export type StaticWeatherData = {
-    [unitProperty: string]: string | Date | number | null | boolean | StaticWeatherData,
+    [unitProperty: string]: string | Date | undefined | number | null | boolean | StaticWeatherData,
 }
 
 /**
@@ -104,7 +104,7 @@ export default class FlexibleWeatherData {
             const key: string = keys[i];
             const value = mixedWeatherUnitData[key];
 
-            if (typeof value === "string" || typeof value === "boolean" || value instanceof Date || value === null) {
+            if (typeof value === "string" || typeof value === "boolean" || value instanceof Date || value === null || value === undefined) {
                 weatherData[key] = value;
             } else if (value instanceof Array) {
                 weatherData[key] = value[0];

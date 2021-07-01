@@ -1,7 +1,6 @@
 import FlexibleHighLowData from "../unit/flexibleData/FlexibleHighLowData";
 import FlexibleRealtimeData from "../unit/flexibleData/FlexibleRealtimeData";
 import SimpleVPDriver, { SimpleHighsAndLowsData, SimpleRealtimeData } from "./SimpleVPDriver";
-import { DriverBoolean, DriverDate, DriverNumber, DriverString } from "./VPDriverInterface";
 
 /**
  * More advanced interface to a vantage pro that is connected serially. The vproweather driver must be installed and globally adressable.
@@ -28,134 +27,134 @@ export default class AdvancedVPDriver extends SimpleVPDriver {
 
     private refractorHighsAndLows = (data: SimpleHighsAndLowsData): AdvancedHighsAndLowsData => {
         return {
-            time: data.time,
+            time: data.time ?? null,
             pressure: {
                 day: {
                     low: {
-                        value: data.hlBaroLoDay,
-                        time: data.hlBaroLoTime,
+                        value: data.hlBaroLoDay ?? null,
+                        time: data.hlBaroLoTime ?? null,
                     },
                     high: {
-                        value: data.hlBaroHiDay,
-                        time: data.hlBaroHiTime,
+                        value: data.hlBaroHiDay ?? null,
+                        time: data.hlBaroHiTime ?? null,
                     },
                 },
                 month: {
-                    low: data.hlBaroLoMonth,
-                    high: data.hlBaroHiMonth,
+                    low: data.hlBaroLoMonth ?? null,
+                    high: data.hlBaroHiMonth ?? null,
                 },
                 year: {
-                    low: data.hlBaroLoYear,
-                    high: data.hlBaroHiYear,
+                    low: data.hlBaroLoYear ?? null,
+                    high: data.hlBaroHiYear ?? null,
                 },
             },
             wind: {
                 day: {
-                    value: data.hlWindHiDay,
-                    time: data.hlWindHiTime,
+                    value: data.hlWindHiDay ?? null,
+                    time: data.hlWindHiTime ?? null,
                 },
-                month: data.hlWindHiMonth,
-                year: data.hlWindHiYear,
+                month: data.hlWindHiMonth ?? null,
+                year: data.hlWindHiYear ?? null,
             },
             windChill: {
                 day: {
-                    value: data.hlChillLoDay,
-                    time: data.hlChillLoTime,
+                    value: data.hlChillLoDay ?? null,
+                    time: data.hlChillLoTime ?? null,
                 },
-                month: data.hlChillLoMonth,
-                year: data.hlChillLoYear,
+                month: data.hlChillLoMonth ?? null,
+                year: data.hlChillLoYear ?? null,
             },
             dewpoint: {
                 day: {
                     low: {
-                        value: data.hlDewLoDay,
-                        time: data.hlDewLoTime,
+                        value: data.hlDewLoDay ?? null,
+                        time: data.hlDewLoTime ?? null,
                     },
                     high: {
-                        value: data.hlDewHiDay,
-                        time: data.hlDewHiTime,
+                        value: data.hlDewHiDay ?? null,
+                        time: data.hlDewHiTime ?? null,
                     },
                 },
                 month: {
-                    low: data.hlDewLoMonth,
-                    high: data.hlDewHiMonth,
+                    low: data.hlDewLoMonth ?? null,
+                    high: data.hlDewHiMonth ?? null,
                 },
                 year: {
-                    low: data.hlDewLoYear,
-                    high: data.hlDewHiYear,
+                    low: data.hlDewLoYear ?? null,
+                    high: data.hlDewHiYear ?? null,
                 },
             },
             heatIndex: {
                 day: {
-                    value: data.hlHeatHiDay,
-                    time: data.hlHeatHiTime,
+                    value: data.hlHeatHiDay ?? null,
+                    time: data.hlHeatHiTime ?? null,
                 },
-                month: data.hlHeatHiMonth,
-                year: data.hlHeatHiYear,
+                month: data.hlHeatHiMonth ?? null,
+                year: data.hlHeatHiYear ?? null,
             },
             solarRadiation: {
                 day: {
-                    value: data.hlSolarHiDay,
-                    time: data.hlSolarHiTime,
+                    value: data.hlSolarHiDay ?? null,
+                    time: data.hlSolarHiTime ?? null,
                 },
-                month: data.hlSolarHiMonth,
-                year: data.hlSolarHiYear,
+                month: data.hlSolarHiMonth ?? null,
+                year: data.hlSolarHiYear ?? null,
             },
             uvLevel: {
                 day: {
-                    value: data.hlUVHiDay,
-                    time: data.hlUVHiTime,
+                    value: data.hlUVHiDay ?? null,
+                    time: data.hlUVHiTime ?? null,
                 },
-                month: data.hlUVHiMonth,
-                year: data.hlUVHiYear,
+                month: data.hlUVHiMonth ?? null,
+                year: data.hlUVHiYear ?? null,
             },
             rainRate: {
                 day: {
-                    value: data.hlRainRateHiDay,
-                    time: data.hlRainRateHiTime,
+                    value: data.hlRainRateHiDay ?? null,
+                    time: data.hlRainRateHiTime ?? null,
                 },
-                month: data.hlRainRateHiMonth,
-                year: data.hlRainRateHiYear,
+                month: data.hlRainRateHiMonth ?? null,
+                year: data.hlRainRateHiYear ?? null,
             },
             temperature: {
                 inside: {
                     day: {
                         low: {
-                            value: data.hlInTempLoDay,
-                            time: data.hlInTempLoTime,
+                            value: data.hlInTempLoDay ?? null,
+                            time: data.hlInTempLoTime ?? null,
                         },
                         high: {
-                            value: data.hlInTempHiDay,
-                            time: data.hlInTempHiTime,
+                            value: data.hlInTempHiDay ?? null,
+                            time: data.hlInTempHiTime ?? null,
                         },
                     },
                     month: {
-                        low: data.hlInTempLoMonth,
-                        high: data.hlInTempHiMonth,
+                        low: data.hlInTempLoMonth ?? null,
+                        high: data.hlInTempHiMonth ?? null,
                     },
                     year: {
-                        low: data.hlInTempLoYear,
-                        high: data.hlInTempHiYear,
+                        low: data.hlInTempLoYear ?? null,
+                        high: data.hlInTempHiYear ?? null,
                     },
                 },
                 outside: {
                     day: {
                         low: {
-                            value: data.hlOutTempLoDay,
-                            time: data.hlOutTempLoTime,
+                            value: data.hlOutTempLoDay ?? null,
+                            time: data.hlOutTempLoTime ?? null,
                         },
                         high: {
-                            value: data.hlOutTempHiDay,
-                            time: data.hlOutTempHiTime,
+                            value: data.hlOutTempHiDay ?? null,
+                            time: data.hlOutTempHiTime ?? null,
                         },
                     },
                     month: {
-                        low: data.hlOutTempLoMonth,
-                        high: data.hlOutTempHiMonth,
+                        low: data.hlOutTempLoMonth ?? null,
+                        high: data.hlOutTempHiMonth ?? null,
                     },
                     year: {
-                        low: data.hlOutTempLoYear,
-                        high: data.hlOutTempHiYear,
+                        low: data.hlOutTempLoYear ?? null,
+                        high: data.hlOutTempHiYear ?? null,
                     },
                 },
             },
@@ -163,21 +162,21 @@ export default class AdvancedVPDriver extends SimpleVPDriver {
                 inside: {
                     day: {
                         low: {
-                            value: data.hlInHumLoDay,
-                            time: data.hlInHumLoTime,
+                            value: data.hlInHumLoDay ?? null,
+                            time: data.hlInHumLoTime ?? null,
                         },
                         high: {
-                            value: data.hlInHumHiDay,
-                            time: data.hlInHumHiTime,
+                            value: data.hlInHumHiDay ?? null,
+                            time: data.hlInHumHiTime ?? null,
                         },
                     },
                     month: {
-                        low: data.hlInHumLoMonth,
-                        high: data.hlInHumHiMonth,
+                        low: data.hlInHumLoMonth ?? null,
+                        high: data.hlInHumHiMonth ?? null,
                     },
                     year: {
-                        low: data.hlInHumLoYear,
-                        high: data.hlInHumHiYear,
+                        low: data.hlInHumLoYear ?? null,
+                        high: data.hlInHumHiYear ?? null,
                     },
                 },
             },
@@ -186,282 +185,289 @@ export default class AdvancedVPDriver extends SimpleVPDriver {
 
     private refractorRealtimeData(data: SimpleRealtimeData): AdvancedRealtimeData {
         return {
-            time: data.time,
-            nextArchiveRecord: data.rtNextArchiveRecord,
+            time: data.time ?? null,
+            nextArchiveRecord: data.rtNextArchiveRecord ?? null,
             pressure: {
-                current: data.rtBaroCurr,
-                trend: data.rtBaroTrend,
-                image: data.rtBaroTrendImg,
+                current: data.rtBaroCurr ?? null,
+                trend: data.rtBaroTrend ?? null,
+                image: data.rtBaroTrendImg ?? null,
             },
             wind: {
                 speed: {
-                    current: data.rtWindSpeed,
+                    current: data.rtWindSpeed ?? null,
                     avg: {
-                        short: data.rtWindAvgSpeed,
-                        long: data.rtWind2mAvgSpeed,
+                        short: data.rtWindAvgSpeed ?? null,
+                        long: data.rtWind2mAvgSpeed ?? null,
                     },
                 },
                 direction: {
-                    degrees: data.rtWindDir,
-                    rose: data.rtWindDirRose,
+                    degrees: data.rtWindDir ?? null,
+                    rose: data.rtWindDirRose ?? null,
                 },
                 gust: {
-                    speed: data.rtWind10mGustMaxSpeed,
+                    speed: data.rtWind10mGustMaxSpeed ?? null,
                     direction: {
-                        degrees: data.rtWind10mGustMaxDir,
-                        rose: data.rtWind10mGustMaxDirRose,
+                        degrees: data.rtWind10mGustMaxDir ?? null,
+                        rose: data.rtWind10mGustMaxDirRose ?? null,
                     },
                 },
-                chill: data.rtWindChill,
+                chill: data.rtWindChill ?? null,
             },
             humidity: {
-                outside: data.rtOutsideHum,
-                inside: data.rtInsideHum,
+                outside: data.rtOutsideHum ?? null,
+                inside: data.rtInsideHum ?? null,
             },
             temperature: {
-                outside: data.rtOutsideTemp,
-                inside: data.rtInsideTemp,
+                outside: data.rtOutsideTemp ?? null,
+                inside: data.rtInsideTemp ?? null,
             },
             rain: {
-                rate: data.rtRainRate,
-                isRaining: data.rtIsRaining,
-                quarter: data.rt15mRain,
-                hour: data.rtHourRain,
-                day: data.rtDayRain,
-                month: data.rtMonthRain,
-                year: data.rtYearRain,
+                rate: data.rtRainRate ?? null,
+                isRaining: data.rtIsRaining ?? null,
+                quarter: data.rt15mRain ?? null,
+                hour: data.rtHourRain ?? null,
+                day: data.rtDayRain ?? null,
+                month: data.rtMonthRain ?? null,
+                year: data.rtYearRain ?? null,
             },
             storm: {
-                rain: data.rtRainStorm,
+                rain: data.rtRainStorm ?? null,
                 // TODO fix wrong date parsing
-                startDate: data.rtStormStartDate,
+                startDate: data.rtStormStartDate ?? null,
             },
             sun: {
-                rise: data.rtSunrise,
-                set: data.rtSunset,
-                uvLevel: data.rtUVLevel,
-                solarRadiation: data.rtSolarRad,
+                rise: data.rtSunrise ?? null,
+                set: data.rtSunset ?? null,
+                uvLevel: data.rtUVLevel ?? null,
+                solarRadiation: data.rtSolarRad ?? null,
                 et: {
-                    day: data.rtDayET,
-                    month: data.rtMonthET,
+                    day: data.rtDayET ?? null,
+                    month: data.rtMonthET ?? null,
                 },
             },
             forecast: {
-                text: data.rtForecast,
-                icon: data.rtForeIcon,
-                rule: data.rtForeRule,
+                text: data.rtForecast ?? null,
+                icon: data.rtForeIcon ?? null,
+                rule: data.rtForeRule ?? null,
             },
             batteries: {
-                consoleVoltageLevel: data.rtBattVoltage,
-                transmitterVoltageLevel: data.rtXmitBattt,
+                consoleVoltageLevel: data.rtBattVoltage ?? null,
+                transmitterVoltageLevel: data.rtXmitBattt ?? null,
             },
-            thswIndex: data.rtThswIndex,
+            thswIndex: data.rtThswIndex ?? null,
         };
     }
 }
 
+export type AdvancedDriverNumber = number | null;
+export type AdvancedDriverDate = Date | null;
+export type AdvancedDriverBoolean = boolean | null;
+export type AdvancedDriverString = string | null;
+export type AdvancedDriverType = AdvancedDriverBoolean | AdvancedDriverDate | AdvancedDriverNumber | AdvancedDriverString;
+
+
 export type AdvancedRealtimeData = {
-    time: DriverDate,
-    nextArchiveRecord: DriverString,
+    time: AdvancedDriverDate,
+    nextArchiveRecord: AdvancedDriverString,
     pressure: {
-        current: DriverNumber,
-        trend: DriverString,
-        image: DriverString,
+        current: AdvancedDriverNumber,
+        trend: AdvancedDriverString,
+        image: AdvancedDriverString,
     },
     wind: {
         speed: {
-            current: DriverNumber,
+            current: AdvancedDriverNumber,
             avg: {
-                short: DriverNumber,
-                long: DriverNumber,
+                short: AdvancedDriverNumber,
+                long: AdvancedDriverNumber,
             },
         },
         direction: {
-            degrees: DriverNumber,
-            rose: DriverString,
+            degrees: AdvancedDriverNumber,
+            rose: AdvancedDriverString,
         },
         gust: {
-            speed: DriverNumber,
+            speed: AdvancedDriverNumber,
             direction: {
-                degrees: DriverNumber,
-                rose: DriverString,
+                degrees: AdvancedDriverNumber,
+                rose: AdvancedDriverString,
             },
         },
-        chill: DriverNumber,
+        chill: AdvancedDriverNumber,
     },
     humidity: {
-        outside: DriverNumber,
-        inside: DriverNumber,
+        outside: AdvancedDriverNumber,
+        inside: AdvancedDriverNumber,
     },
     temperature: {
-        outside: DriverNumber,
-        inside: DriverNumber,
+        outside: AdvancedDriverNumber,
+        inside: AdvancedDriverNumber,
     },
     rain: {
-        rate: DriverNumber,
-        isRaining: DriverBoolean,
-        quarter: DriverNumber,
-        hour: DriverNumber,
-        day: DriverNumber,
-        month: DriverNumber,
-        year: DriverNumber,
+        rate: AdvancedDriverNumber,
+        isRaining: AdvancedDriverBoolean,
+        quarter: AdvancedDriverNumber,
+        hour: AdvancedDriverNumber,
+        day: AdvancedDriverNumber,
+        month: AdvancedDriverNumber,
+        year: AdvancedDriverNumber,
     },
     storm: {
-        rain: DriverNumber,
+        rain: AdvancedDriverNumber,
         // TODO fix wrong date parsing
-        startDate: DriverDate,
+        startDate: AdvancedDriverDate,
     },
     sun: {
-        rise: DriverDate,
-        set: DriverDate,
-        uvLevel: DriverNumber,
-        solarRadiation: DriverNumber,
+        rise: AdvancedDriverDate,
+        set: AdvancedDriverDate,
+        uvLevel: AdvancedDriverNumber,
+        solarRadiation: AdvancedDriverNumber,
         et: {
-            day: DriverNumber,
-            month: DriverNumber,
+            day: AdvancedDriverNumber,
+            month: AdvancedDriverNumber,
         },
     },
     forecast: {
-        text: DriverString,
-        icon: DriverNumber,
-        rule: DriverNumber,
+        text: AdvancedDriverString,
+        icon: AdvancedDriverNumber,
+        rule: AdvancedDriverNumber,
     },
     batteries: {
-        consoleVoltageLevel: DriverNumber,
-        transmitterVoltageLevel: DriverNumber,
+        consoleVoltageLevel: AdvancedDriverNumber,
+        transmitterVoltageLevel: AdvancedDriverNumber,
     },
-    thswIndex: DriverNumber,
+    thswIndex: AdvancedDriverNumber,
 }
 
 export type AdvancedHighsAndLowsData = {
-    time: DriverDate,
+    time: AdvancedDriverDate,
     pressure: {
         day: {
             low: {
-                value: DriverNumber,
-                time: DriverDate,
+                value: AdvancedDriverNumber,
+                time: AdvancedDriverDate,
             },
             high: {
-                value: DriverNumber,
-                time: DriverDate,
+                value: AdvancedDriverNumber,
+                time: AdvancedDriverDate,
             },
         },
         month: {
-            low: DriverNumber,
-            high: DriverNumber,
+            low: AdvancedDriverNumber,
+            high: AdvancedDriverNumber,
         },
         year: {
-            low: DriverNumber,
-            high: DriverNumber,
+            low: AdvancedDriverNumber,
+            high: AdvancedDriverNumber,
         },
     },
     wind: {
         day: {
-            value: DriverNumber,
-            time: DriverDate,
+            value: AdvancedDriverNumber,
+            time: AdvancedDriverDate,
         },
-        month: DriverNumber,
-        year: DriverNumber,
+        month: AdvancedDriverNumber,
+        year: AdvancedDriverNumber,
     },
     windChill: {
         day: {
-            value: DriverNumber,
-            time: DriverDate,
+            value: AdvancedDriverNumber,
+            time: AdvancedDriverDate,
         },
-        month: DriverNumber,
-        year: DriverNumber,
+        month: AdvancedDriverNumber,
+        year: AdvancedDriverNumber,
     },
     dewpoint: {
         day: {
             low: {
-                value: DriverNumber,
-                time: DriverDate,
+                value: AdvancedDriverNumber,
+                time: AdvancedDriverDate,
             },
             high: {
-                value: DriverNumber,
-                time: DriverDate,
+                value: AdvancedDriverNumber,
+                time: AdvancedDriverDate,
             },
         },
         month: {
-            low: DriverNumber,
-            high: DriverNumber,
+            low: AdvancedDriverNumber,
+            high: AdvancedDriverNumber,
         },
         year: {
-            low: DriverNumber,
-            high: DriverNumber,
+            low: AdvancedDriverNumber,
+            high: AdvancedDriverNumber,
         },
     },
     heatIndex: {
         day: {
-            value: DriverNumber,
-            time: DriverDate,
+            value: AdvancedDriverNumber,
+            time: AdvancedDriverDate,
         },
-        month: DriverNumber,
-        year: DriverNumber,
+        month: AdvancedDriverNumber,
+        year: AdvancedDriverNumber,
     },
     solarRadiation: {
         day: {
-            value: DriverNumber,
-            time: DriverDate,
+            value: AdvancedDriverNumber,
+            time: AdvancedDriverDate,
         },
-        month: DriverNumber,
-        year: DriverNumber,
+        month: AdvancedDriverNumber,
+        year: AdvancedDriverNumber,
     },
     uvLevel: {
         day: {
-            value: DriverNumber,
-            time: DriverDate,
+            value: AdvancedDriverNumber,
+            time: AdvancedDriverDate,
         },
-        month: DriverNumber,
-        year: DriverNumber,
+        month: AdvancedDriverNumber,
+        year: AdvancedDriverNumber,
     },
     rainRate: {
         day: {
-            value: DriverNumber,
-            time: DriverDate,
+            value: AdvancedDriverNumber,
+            time: AdvancedDriverDate,
         },
-        month: DriverNumber,
-        year: DriverNumber,
+        month: AdvancedDriverNumber,
+        year: AdvancedDriverNumber,
     },
     temperature: {
         inside: {
             day: {
                 low: {
-                    value: DriverNumber,
-                    time: DriverDate,
+                    value: AdvancedDriverNumber,
+                    time: AdvancedDriverDate,
                 },
                 high: {
-                    value: DriverNumber,
-                    time: DriverDate,
+                    value: AdvancedDriverNumber,
+                    time: AdvancedDriverDate,
                 },
             },
             month: {
-                low: DriverNumber,
-                high: DriverNumber,
+                low: AdvancedDriverNumber,
+                high: AdvancedDriverNumber,
             },
             year: {
-                low: DriverNumber,
-                high: DriverNumber,
+                low: AdvancedDriverNumber,
+                high: AdvancedDriverNumber,
             },
         },
         outside: {
             day: {
                 low: {
-                    value: DriverNumber,
-                    time: DriverDate,
+                    value: AdvancedDriverNumber,
+                    time: AdvancedDriverDate,
                 },
                 high: {
-                    value: DriverNumber,
-                    time: DriverDate,
+                    value: AdvancedDriverNumber,
+                    time: AdvancedDriverDate,
                 },
             },
             month: {
-                low: DriverNumber,
-                high: DriverNumber,
+                low: AdvancedDriverNumber,
+                high: AdvancedDriverNumber,
             },
             year: {
-                low: DriverNumber,
-                high: DriverNumber,
+                low: AdvancedDriverNumber,
+                high: AdvancedDriverNumber,
             },
         },
     },
@@ -469,21 +475,21 @@ export type AdvancedHighsAndLowsData = {
         inside: {
             day: {
                 low: {
-                    value: DriverNumber,
-                    time: DriverDate,
+                    value: AdvancedDriverNumber,
+                    time: AdvancedDriverDate,
                 },
                 high: {
-                    value: DriverNumber,
-                    time: DriverDate,
+                    value: AdvancedDriverNumber,
+                    time: AdvancedDriverDate,
                 },
             },
             month: {
-                low: DriverNumber,
-                high: DriverNumber,
+                low: AdvancedDriverNumber,
+                high: AdvancedDriverNumber,
             },
             year: {
-                low: DriverNumber,
-                high: DriverNumber,
+                low: AdvancedDriverNumber,
+                high: AdvancedDriverNumber,
             },
         },
     },
