@@ -38,7 +38,7 @@ npm install vproweatherjs
 ## Basic Usage
 After setting up the driver and installing the vproweatherjs package you are ready to connect seamlessly to your weather station in javascript/typescript!
 ```javascript
-import { SimpleVPDriver } from vproweatherjs;
+import { SimpleVPDriver } from "vproweatherjs";
 
 async function doDriverStuff(){
   const driver = new SimpleVPDriver({
@@ -74,7 +74,7 @@ doDriverStuff();
 With vproweatherjs, the weather data can also be refractored into a more readable structure.
 Added to that there is a unit system that allows you to convert the weather data into any unit you want with minimal effort.
 ```javascript
-import { AdvancedVPDriver, Units, UnitConfig } from vproweatherjs;
+import { AdvancedVPDriver, Units, UnitConfig } from "vproweatherjs";
 
 async function doDriverStuff(){
   const driver = new AdvancedVPDriver({
