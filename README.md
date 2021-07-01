@@ -1,3 +1,5 @@
+🔴 This package is still in the development phase. most of the functions will probably already work, but there are still some tests to be done and a more detailed documentation to be written. 🔴
+
 # vproweatherjs
 Javascript/Typescript interface to any Davis Vantage Pro weather station. Based on the [vproweather](https://github.com/bytesnz/vproweather) driver.
 Only works on *unix devices.
