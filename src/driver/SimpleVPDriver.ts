@@ -172,7 +172,7 @@ export default class SimpleVPDriver extends VPDriverInterface implements DriverO
                     const result = await fn.apply(this, ...args);
                     return result;
                 } catch (err) {
-                    if (this.logErrors) new DriverError("Driver didn't respond! Try to change the driver's options.");
+                    if (this.logErrors) throw new DriverError("Driver didn't respond! Try to change the driver's options.");
                 }
             }
             return undefined;
